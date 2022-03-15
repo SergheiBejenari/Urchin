@@ -62,23 +62,6 @@ public class Tests extends BaseTest {
         app.homePage().open();
         app.homePage().clickLinkedinButton();
         app.homePage().switchToTabNextTab();
-        if (app.getDriver().getTitle().equals("Security Verification | LinkedIn")) {
-            app.homePage().clickSignInButton();
-            app.joinLinkedIn().typeCredentials("my.cup.of.coffee.with.milk@gmail.com", "test123798212312");
-            app.joinLinkedIn().clickSubmitButton();
-            app.joinLinkedIn().clickVerificationButton();
-        } else if (app.getDriver().getTitle().equals("Urchin Systems | LinkedIn")) {
-            app.joinLinkedIn().clickSignInButton();
-            app.joinLinkedIn().waitForDisplayed();
-            app.joinLinkedIn().typeCredentials("test1237982", "test123798212312");
-            app.joinLinkedIn().clickSignInButton();
-            app.joinLinkedIn().clickVerificationButton();
-        } else if (app.getDriver().getTitle().equals("Sign In | LinkedIn")) {
-            app.joinLinkedIn().waitForDisplayed();
-            app.joinLinkedIn().typeCredentials("test1237982", "test123798212312");
-            app.joinLinkedIn().clickSignInButton();
-            app.joinLinkedIn().clickVerificationButton();
-        }
         app.urchinAccountLinkedInPage().clickSeeJobsButton();
         app.urchinSystemsJobsPage().getAvailableJobs();
         assertEquals(app.urchinSystemsJobsPage().ifJobAvailable("Support Specialist"), true,
